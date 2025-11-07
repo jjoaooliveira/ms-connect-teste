@@ -1,0 +1,31 @@
+.sidenav {
+    max-width: 240px;
+}
+
+.sidenav-content {
+    padding: 2em;
+    height: 100%;
+}
+
+.sidenav-container {
+    height: 90%;
+}
+
+.border-radius-none {
+    border-radius: 0;
+}
+
+.sidenav.is-phone-portrait {
+    max-width: 260px;
+}
+
+.list {
+    padding: 1em;
+}
+
+.list-link {
+    display: flex;
+    gap: 1em;
+    text-decoration: none;
+    color: black;
+}

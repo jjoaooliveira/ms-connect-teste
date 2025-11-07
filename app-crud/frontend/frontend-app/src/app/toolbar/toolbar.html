@@ -1,0 +1,37 @@
+<mat-toolbar color="primary" fixed>
+    <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h2>Dashboard</h2>    
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav 
+        #sidenav 
+        mode="over" 
+        [ngClass]="{'is-phone-portrait': isPhonePortrait}" 
+        class="sidenav border-radius-none">
+        <mat-nav-list class="list">
+            <mat-list-item>
+                <a routerLink="" class="list-link">
+                    <mat-icon>house</mat-icon>
+                    <span>HOME</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a routerLink="users" class="list-link">
+                    <mat-icon>group</mat-icon>
+                    <span>USUÁRIOS</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a routerLink="users/new" class="list-link">
+                    <mat-icon>person_add</mat-icon>
+                    <span>NOVO USUÁRIO</span>
+                </a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
