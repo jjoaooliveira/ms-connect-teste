@@ -1,0 +1,15 @@
+.container-home {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img.is-phone-portrait {
+    width: 240px;
+    height: 240px;
+}
+
+.count.is-phone-portrait {
+    font-size: large;
+}
