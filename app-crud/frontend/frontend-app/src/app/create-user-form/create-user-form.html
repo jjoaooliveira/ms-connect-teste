@@ -1,0 +1,44 @@
+<div class="container">
+    <form action="#" [formGroup]="userFormGroup" class="form">
+        <h2>Criar novo usuário</h2>
+        <mat-form-field hintLabel="Max 100 caracteres" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput 
+                maxlength="100" 
+                placeholder="Digite seu nome" 
+                formControlName="name">
+            <mat-error>
+                @if(userFormGroup.get('name')?.hasError('required')) {
+                    Nome é obrigatório
+                }
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field hintLabel="Max 100 caracteres" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput 
+                maxlength="100" 
+                placeholder="Digite seu email" 
+                formControlName="email">
+            <mat-error>
+                @if (userFormGroup.get('email')?.hasError('required')) {
+                    Email é obrigatório
+                }
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field hintLabel="Max 20 caracteres" appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input matInput 
+                maxlength="20" 
+                placeholder="Digite seu telefone" 
+                formControlName="phone">
+            <mat-error>
+                @if (userFormGroup.get('phone')?.hasError('required')) {
+                    Telefone é obrigatório
+                }
+            </mat-error>
+        </mat-form-field>
+        <div class="form-button-section">
+            <button type="submit" matButton="filled" class="form-button">enviar</button>
+        </div>
+    </form>
+</div>

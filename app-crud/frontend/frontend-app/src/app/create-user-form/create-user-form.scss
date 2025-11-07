@@ -1,0 +1,23 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 680px;
+    width: 100%;
+}
+
+.form-button {
+    width: 120px;
+    font-size: larger;
+}
+
+.form-button-section {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
