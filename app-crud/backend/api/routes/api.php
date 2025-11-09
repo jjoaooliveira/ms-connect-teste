@@ -3,6 +3,10 @@
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
+/**
+* API Routes for User CRUD operations
+*/
+
 Route::get('users', [UserController::class, 'index']);
 Route::get('users/{id}', [UserController::class, 'show'])->whereNumber('id');
 Route::post('users', [UserController::class, 'store']);
@@ -14,3 +18,6 @@ Route::fallback(function () {
         "message" => "Invalid Path"
     ], 404);
 });
+Route::options('{any}', function() {
+    return response('', 200);
+})->where('any', '.*');
