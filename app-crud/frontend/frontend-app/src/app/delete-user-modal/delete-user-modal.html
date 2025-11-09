@@ -1,0 +1,6 @@
+<h2 mat-dialog-title>Confirmação</h2>
+<mat-dialog-content>Tem certeza que deseja excluir este usuário?</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-raised-button color="warn" [mat-dialog-close]="data.user">Excluir</button>
+</mat-dialog-actions>
