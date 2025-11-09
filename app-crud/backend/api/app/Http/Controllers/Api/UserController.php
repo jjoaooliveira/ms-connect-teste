@@ -8,6 +8,11 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 
+/**
+ * @group User Management
+ *
+ * APIs for managing users
+ */
 class UserController extends Controller
 {
     /**
@@ -45,10 +50,11 @@ class UserController extends Controller
      */
     public function update(UserUpdateRequest $request, int $id)
     {   
-        $validatedUserRequest = $request->validated();
-        $user = User::findOrFail($id)->toResource(UserResource::class);
-        $user->name = $validatedUserRequest['name'];
-        $user->phone = $validatedUserRequest['phone'];
+        $validatedUpdateRequest = $request->validated();
+        $user = User::findOrFail($id);
+        $user->name = $validatedUpdateRequest['name'];
+        $user->email = $validatedUpdateRequest['email'];
+        $user->phone = $validatedUpdateRequest['phone'];
         $user->update();
         
         return response()->json([

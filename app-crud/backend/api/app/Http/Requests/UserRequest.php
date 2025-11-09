@@ -4,6 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Request class for validating user data.
+ */
 class UserRequest extends FormRequest
 {
     /**

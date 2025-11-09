@@ -3,7 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
+/**
+ * Request class for validating user update data.
+ */
 class UserUpdateRequest extends FormRequest
 {
     /**
@@ -23,6 +27,7 @@ class UserUpdateRequest extends FormRequest
     {
         return [
             'name'  => ['string', 'required', 'max:100'],
+            'email' => ['string', 'required', 'max:100', 'unique:users,email,'.$this->id],
             'phone' => ['string', 'required', 'min:11', 'max:20']
         ];
     }
