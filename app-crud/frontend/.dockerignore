@@ -1,0 +1,60 @@
+# ================================
+# Node and build output
+# ================================
+frontend-app/node_modules
+frontend-app/dist
+frontend-app/out-tsc
+frontend-app/.angular
+frontend-app/.cache
+frontend-app/.tmp
+
+# ================================
+# Testing & Coverage
+# ================================
+frontend-app/coverage
+frontend-app/jest
+frontend-app/cypress
+frontend-app/cypress/screenshots
+frontend-app/cypress/videos
+frontend-app/reports
+frontend-app/playwright-report
+frontend-app/.vite
+frontend-app/.vitepress
+
+# ================================
+# Environment & log files
+# ================================
+frontend-app/*.env*
+frontend-app/!*.env.production
+frontend-app/*.log
+frontend-app/*.tsbuildinfo
+
+# ================================
+# IDE & OS-specific files
+# ================================
+frontend-app/.vscode
+frontend-app/.idea
+frontend-app/.DS_Store
+frontend-app/Thumbs.db
+frontend-app/*.swp
+
+# ================================
+# Version control & CI files
+# ================================
+frontend-app/.git
+frontend-app/.gitignore
+
+# ================================
+# Docker & local orchestration
+# ================================
+frontend-app/Dockerfile.*
+frontend-app/.dockerignore
+frontend-app/docker-compose.yml
+frontend-app/docker-compose*.yml
+
+# ================================
+# Miscellaneous
+# ================================
+frontend-app/*.bak
+frontend-app/*.old
+frontend-app/*.tmp

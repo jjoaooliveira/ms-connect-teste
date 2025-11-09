@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  angular:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: angular
+    ports:
+      - "80:4200"
+    volumes:
+      - ./frontend/frontend-app:/app
+      - /app/node_modules
+    networks:
+      - app-network
+    depends_on:
+      - laravel-api
+        
+
+  laravel-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: laravel-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/api:/var/www/html
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+
+  mysql:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    container_name: mysql-db 
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:

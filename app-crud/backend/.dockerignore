@@ -1,0 +1,37 @@
+# Ignorar arquivos do sistema
+api/.DS_Store
+api/Thumbs.db
+
+# Ignorar node_modules e vendor (vamos instalar dentro do container)
+api/node_modules
+api/vendor
+
+# Ignorar arquivos de log e cache
+api/*.log
+api/storage/*.key
+api/storage/*.log
+api/storage/framework/cache/*
+api/storage/framework/sessions/*
+api/storage/framework/views/*
+api/storage/logs/*
+api/bootstrap/cache/*
+
+# Ignorar arquivos de IDE e editor
+api/.vscode
+api/.idea
+api/*.sublime-project
+api/*.sublime-workspace
+
+# Ignorar arquivos de ambiente locais
+/api/.env
+/api/.env.*.local
+
+# Ignorar testes e arquivos de cobertura
+api/phpunit.xml
+api/phpunit.xml.dist
+api/coverage/
+
+# Ignorar builds do frontend (se houver Angular/React/Vue)
+api/public/build
+api/public/dist
+api/node_modules/
