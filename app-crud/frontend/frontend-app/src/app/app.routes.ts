@@ -3,6 +3,11 @@ import { TableUser } from './dashboard/table-user';
 import { Home } from './home/home';
 import { CreateUserForm } from './create-user-form/create-user-form';
 
+/**
+ * Application routes.
+ * @constant {Routes} routes - The application routes.
+ */
+
 export const routes: Routes = [
     {
         path: '',

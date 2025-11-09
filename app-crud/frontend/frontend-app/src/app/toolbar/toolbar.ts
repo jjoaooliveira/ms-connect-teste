@@ -9,6 +9,17 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
 
+/**
+ * Component for the application toolbar.
+ * @component
+ * @selector app-toolbar
+ * @templateUrl ./toolbar.html
+ * @styleUrl ./toolbar.scss
+ * @implements OnInit
+ * @description This component provides a responsive toolbar for the application.
+ * It adapts to different screen sizes using Angular's BreakpointObserver.
+ */
+
 @Component({
   selector: 'app-toolbar',
   imports: [
@@ -30,16 +41,16 @@ export class Toolbar implements OnInit {
   isPhonePortrait = false;
 
   constructor(private responsive: BreakpointObserver) {}
+    
+    ngOnInit(): void {
+        this.responsive.observe(Breakpoints.HandsetPortrait)
+        .subscribe(result => {
+            this.isPhonePortrait = false; 
 
-  ngOnInit(): void {
-    this.responsive.observe(Breakpoints.HandsetPortrait)
-      .subscribe(result => {
-        this.isPhonePortrait = false; 
-
-        if (result.matches) {
-          this.isPhonePortrait = true;
-        }
-      });
-  }
+            if (result.matches) {
+            this.isPhonePortrait = true;
+            }
+        });
+    }
   
 }

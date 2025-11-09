@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="#" [formGroup]="userFormGroup" class="form">
+    <form (ngSubmit)="saveUser()" [formGroup]="userFormGroup" class="form">
         <h2>Criar novo usuário</h2>
         <mat-form-field hintLabel="Max 100 caracteres" appearance="outline">
             <mat-label>Nome</mat-label>
@@ -28,7 +28,10 @@
         <mat-form-field hintLabel="Max 20 caracteres" appearance="outline">
             <mat-label>Telefone</mat-label>
             <input matInput 
-                maxlength="20" 
+                maxlength="20"
+                minlength="11"
+                type="tel"
+                pattern="[0-9]*"
                 placeholder="Digite seu telefone" 
                 formControlName="phone">
             <mat-error>
@@ -38,7 +41,7 @@
             </mat-error>
         </mat-form-field>
         <div class="form-button-section">
-            <button type="submit" matButton="filled" class="form-button">enviar</button>
+            <button type="submit" matButton="filled" class="form-button" [disabled]="userFormGroup.invalid">enviar</button>
         </div>
     </form>
 </div>

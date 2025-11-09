@@ -24,7 +24,23 @@
             <th mat-header-cell *matHeaderCellDef> Atualizado em </th>
             <td mat-cell *matCellDef="let user"> {{user.updated_at}} </td>
         </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let user">
+                <div class="table-button-container">
+                    <button (click)="editUser(user)" mat-stroked-button color="primary" aria-label="Edit User" class="table-button">
+                        <mat-icon>edit</mat-icon>
+                        editar
+                    </button>
+                    <button (click)="deleteUser(user)" mat-stroked-button color="primary" aria-label="Remove User" class="table-button">
+                        <mat-icon>person_remove</mat-icon>
+                        remover
+                    </button>
+                </div>
+            </td>
+        </ng-container>
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
         <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
     </table>
+   
 </div>
