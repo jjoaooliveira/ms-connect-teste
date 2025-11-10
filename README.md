@@ -14,7 +14,7 @@ Aplicação  *CRUD* com frontend em Angular e backend com api restful em PHP.
 - Laravel (backend)
 
 ## Executar aplicação
-Para executar a aplicação é necessário navegar até o root da aplicação `./app-crud` e digitar no CMD: 
+Para executar a aplicação clone o projeto com `git clone` e navegue navegar até o root da aplicação `./app-crud`. Em seguida, digite no CMD: 
     
     docker-compose up --build 
 
