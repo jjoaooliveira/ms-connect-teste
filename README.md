@@ -18,7 +18,7 @@ Para executar a aplicação é necessário navegar até o root da aplicação `.
     
     docker-compose up --build 
 
-Com isso, o docker realizará a containeralização do projeto. Cada serviço está em um diretório correspondente e contem um arquivo Dockerfile. 
+Com isso, o docker realizará a containerização do projeto. Cada serviço está em um diretório correspondente e contem um arquivo Dockerfile. 
 
 ## Observação
 O container do backend espera pela disponibilidade do banco de dados. Aguarde a inicialização completa de todos os serviços para utilização do sistema.
